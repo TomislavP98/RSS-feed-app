@@ -20,7 +20,7 @@ class FeedItemsViewModel {
                 do {
                     let filterResponse = try response.filterSuccessfulStatusCodes()
                     let feedResponse = try filterResponse.map(FeedResponse.self,using: JSONDecoder())
-                    self?.feedResponse.onNext(feedResponse.result.entries)
+                    self?.feedResponse.onNext(feedResponse.result?.entries ?? [])
                 } catch let error {
                     print(error.localizedDescription)
                 }

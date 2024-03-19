@@ -85,10 +85,10 @@ final class FeedItemCell: UITableViewCell {
     
     func configureView(with data: FeedItem) {
         titleLabel.text = data.title
-        descriptionLabel.text = data.description
-        dateLabel.text = formatDate(date: data.time)
+        descriptionLabel.text = data.description ?? Strings.Localization.noDescription
+        dateLabel.text = formatDate(date: data.time ?? "")
         
-        if let imageURL = URL(string: data.image.url ?? "") {
+        if let imageURL = URL(string: data.image?.url ?? "") {
             DispatchQueue.global().async {
                 if let data = try? Data(contentsOf: imageURL) {
                     if let image = UIImage(data: data) {
@@ -107,7 +107,7 @@ final class FeedItemCell: UITableViewCell {
         let dateFormatter = DateFormatter()
         let displayDateFormatter = DateFormatter()
         
-        dateFormatter.timeZone = TimeZone(abbreviation: Date.Timezone.utc)
+        dateFormatter.locale = Locale(identifier: Date.Posix.en_us)
         dateFormatter.dateFormat = Date.DateFormats.sourceFormat
         displayDateFormatter.dateFormat = Date.DateFormats.appFormat
         

@@ -8,7 +8,7 @@ class FeedItemsListViewController: UIViewController, UITableViewDelegate  {
     
     private var viewModel = FeedItemsViewModel()
     private var disposeBag = DisposeBag()
-
+    
     let feedName: String
     let feedUrl: String
     
@@ -57,13 +57,12 @@ class FeedItemsListViewController: UIViewController, UITableViewDelegate  {
         
         tableView.rx.modelSelected(FeedItem.self).subscribe(onNext: { [weak self] item in
             guard let self = self else { return }
-            let url = URL(string: item.link)
-            if let url {
+            if let urlString = item.link, let url = URL(string: urlString) {
                 self.navigationController?.present(SFSafariViewController(url: url), animated: true)
             }
         }).disposed(by: disposeBag)
         
         viewModel.getFeeds(feedUrl)
-        }
+    }
 }
 

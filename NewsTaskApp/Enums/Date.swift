@@ -1,12 +1,12 @@
 enum Date {
     
     enum DateFormats {
-        static let sourceFormat: String = "EEE, d MMM  yyyy HH:mm:ss +SSSS"
+        static let sourceFormat: String = "EEE, dd MMM yyyy HH:mm:ss Z"
         static let appFormat: String = "yyyy/MM/dd"
     }
     
-    enum Timezone {
-        static let utc: String = "UTC"
+    enum Posix {
+        static let en_us: String = "en_US_POSIX"
     }
 }
 

@@ -15,6 +15,7 @@ enum Strings {
         static let ok: String = "Ok"         // This one is almost pointless
         static let loaderMessage: String = "If it keeps spinning, go back and chek on API or URL"
         static let invalidUrl: String = "Invalid entry"
+        static let noDescription: String = "Ne description found"
     }
     
     enum Indentifiers {
