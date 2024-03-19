@@ -2,7 +2,7 @@ import Foundation
 
 struct FeedResponse: Codable {
     let ok: Bool
-    let result: ResponseValue?
+    let result: ResponseValue
     
     static func parseResponse(data: Data) throws -> FeedResponse {
         let news = try JSONDecoder().decode(FeedResponse.self, from: data)
@@ -11,8 +11,8 @@ struct FeedResponse: Codable {
 }
 
 struct ResponseValue: Codable {
-    let info: Feed?
-    let entries: [FeedItem]?
+    let info: Feed
+    let entries: [FeedItem]
 }
 
 struct Feed: Codable {

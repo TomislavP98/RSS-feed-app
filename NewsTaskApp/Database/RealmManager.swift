@@ -25,7 +25,12 @@ class RealmManager  {
         
         realm.beginWrite()
         realm.delete(realm.objects(FeedObject.self).where { $0.feedUrl == url }.first!)
-        try! realm.commitWrite()
+        do {
+            try realm.commitWrite()
+        }
+        catch {
+            print("Realm instance fail!")
+        }
     }
     
     func fetchAllFeeds() -> [FeedObject] {
@@ -49,11 +54,15 @@ class RealmManager  {
     
     func toggleFavorite(id: String) {
         guard let realm = createRealmInstance() else { return }
-
         let targetFeedObject = realm.objects(FeedObject.self).where { $0.id == id }.first!
         
-            try! realm.write {
+        do {
+            try realm.write {
                 targetFeedObject.isFavorite.toggle()
+            }
+        }
+        catch {
+            print("Realm instance fail!")
         }
     }
 }

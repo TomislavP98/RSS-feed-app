@@ -20,11 +20,13 @@ class FeedItemsViewModel {
                 do {
                     let filterResponse = try response.filterSuccessfulStatusCodes()
                     let feedResponse = try filterResponse.map(FeedResponse.self,using: JSONDecoder())
-                    self?.feedResponse.onNext(feedResponse.result?.entries ?? [])
+                    self?.feedResponse.onNext(feedResponse.result.entries)
                 } catch let error {
+                    self?.feedResponse.onNext([])
                     print(error.localizedDescription)
                 }
             case .failure(let error):
+                self?.feedResponse.onNext([])
                 print(error.localizedDescription)
             }
         }.disposed(by: disposeBag)
