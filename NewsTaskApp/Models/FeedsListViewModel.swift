@@ -9,13 +9,13 @@ class FeedsListViewModel {
     let feedResponse = BehaviorSubject<[FeedObject]>(value: [])
     private let service: MoyaProvider<MoyaService>
     private var disposeBag = DisposeBag()
-    var validationResponse = BehaviorSubject<Bool>(value: false)
+    var validationResponse = PublishSubject<Bool>()
     
     init(service: MoyaProvider<MoyaService> = MoyaProvider<MoyaService>()) {
         self.service = service
     }
     
-    func validateUrl(_ url: String) {
+    func validateAndCreateFeed(url: String, screenType: ScreenTypes) {
         service.rx.request(.verifyUrl(url: url)).subscribe { [weak self] event in
             switch event {
             case let .success(response):
@@ -23,7 +23,7 @@ class FeedsListViewModel {
                     let filterResponse = try response.filterSuccessfulStatusCodes()
                     let validationResponse = try filterResponse.map(VaidateUrlResponse.self,using: JSONDecoder())
                     if let result = validationResponse.result, result.valid_feed {
-                        self?.validationResponse.onNext(true)
+                        self?.createFeed(object: FeedObject(feedUrl: url, isFavorite: screenType == ScreenTypes.favoriteFeedsScreen), screenType: screenType)
                     } else {
                         self?.validationResponse.onNext(false)
                     }

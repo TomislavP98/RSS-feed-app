@@ -229,39 +229,151 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "96EC29D8-DA21-4AD6-98E6-01D08D5D33DD"
+            uuid = "6318A4DB-802B-4C59-8BE8-110F2E91E81E"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "NewsTaskApp/Screens/FeedsListViewController.swift"
+            filePath = "NewsTaskApp/Models/FeedsListViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "111"
-            endingLineNumber = "111"
-            landmarkName = "addURL()"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "validateAndCreateFeed(url:screenType:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "D0F70779-2FE1-426C-9179-E84EAA125CE3"
+            uuid = "C5C651E4-E559-45EC-99D7-D7CE84F31E0F"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "NewsTaskApp/Screens/FeedsListViewController.swift"
+            filePath = "NewsTaskApp/Models/FeedsListViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "114"
-            endingLineNumber = "114"
-            landmarkName = "addURL()"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "validateAndCreateFeed(url:screenType:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "C5C651E4-E559-45EC-99D7-D7CE84F31E0F - 90525ed8613a1154"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Moya.Response, Swift.Error&gt;) -&gt; () in NewsTaskApp.FeedsListViewModel.validateUrl(Swift.String) -&gt; ()"
+                  moduleName = "NewsTaskApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tomislavpetrov/RSS-feed-app/NewsTaskApp/Models/FeedsListViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "1343">
+               </Location>
+               <Location
+                  uuid = "C5C651E4-E559-45EC-99D7-D7CE84F31E0F - 90525ed8613a1154"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Moya.Response, Swift.Error&gt;) -&gt; () in NewsTaskApp.FeedsListViewModel.validateUrl(Swift.String) -&gt; ()"
+                  moduleName = "NewsTaskApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tomislavpetrov/RSS-feed-app/NewsTaskApp/Models/FeedsListViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "2774">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "88D5E2DA-51AC-4BB6-846E-D345F0F1DD52"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NewsTaskApp/Models/FeedsListViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "validateAndCreateFeed(url:screenType:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "52A82D19-024A-4B73-BCDF-4EF4C9B1B4F7"
+            uuid = "F7D9CF39-48D8-4AAD-B935-2D57BAF230E5"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NewsTaskApp/Models/FeedsListViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "validateAndCreateFeed(url:screenType:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B88E5808-A67A-49FD-9BB7-F00A7E40BD22"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NewsTaskApp/Models/FeedsListViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "validateAndCreateFeed(url:screenType:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B88E5808-A67A-49FD-9BB7-F00A7E40BD22 - 90525ed8613a1154"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Moya.Response, Swift.Error&gt;) -&gt; () in NewsTaskApp.FeedsListViewModel.validateUrl(Swift.String) -&gt; ()"
+                  moduleName = "NewsTaskApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tomislavpetrov/RSS-feed-app/NewsTaskApp/Models/FeedsListViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "1343">
+               </Location>
+               <Location
+                  uuid = "B88E5808-A67A-49FD-9BB7-F00A7E40BD22 - 90525ed8613a1154"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Moya.Response, Swift.Error&gt;) -&gt; () in NewsTaskApp.FeedsListViewModel.validateUrl(Swift.String) -&gt; ()"
+                  moduleName = "NewsTaskApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tomislavpetrov/RSS-feed-app/NewsTaskApp/Models/FeedsListViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "2774">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "250B11CF-424A-4FDD-8BDA-309345DB4904"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -272,69 +384,101 @@
             endingLineNumber = "112"
             landmarkName = "addURL()"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "B5BFB726-187F-4B3C-A60E-7D43426DAB0C"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "NewsTaskApp/Screens/FeedsListViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "105"
-            endingLineNumber = "105"
-            landmarkName = "addURL()"
-            landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "B5BFB726-187F-4B3C-A60E-7D43426DAB0C - eb722d8960b6c054"
+                  uuid = "250B11CF-424A-4FDD-8BDA-309345DB4904 - 4db22abc3ddd1e22"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "NewsTaskApp.FeedsListViewController.addURL() -&gt; ()"
+                  symbolName = "function signature specialization &lt;Arg[3] = Value Promoted from Box&gt; of closure #1 (__C.UIAlertAction) -&gt; () in NewsTaskApp.FeedsListViewController.addURL() -&gt; ()"
                   moduleName = "NewsTaskApp"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tomislavpetrov/Developer/Endava%20Task/NewsTaskApp/NewsTaskApp/Screens/FeedsListViewController.swift"
+                  urlString = "file:///Users/tomislavpetrov/RSS-feed-app/NewsTaskApp/Screens/FeedsListViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "105"
                   endingLineNumber = "105"
-                  offsetFromSymbolStart = "193">
+                  offsetFromSymbolStart = "203">
                </Location>
                <Location
-                  uuid = "B5BFB726-187F-4B3C-A60E-7D43426DAB0C - eb722d8960b6c054"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "NewsTaskApp.FeedsListViewController.addURL() -&gt; ()"
-                  moduleName = "NewsTaskApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tomislavpetrov/Developer/Endava%20Task/NewsTaskApp/NewsTaskApp/Screens/FeedsListViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "105"
-                  endingLineNumber = "105"
-                  offsetFromSymbolStart = "282">
-               </Location>
-               <Location
-                  uuid = "B5BFB726-187F-4B3C-A60E-7D43426DAB0C - 2ec4a40483005e14"
+                  uuid = "250B11CF-424A-4FDD-8BDA-309345DB4904 - 487c9a6311019e29"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "closure #1 (__C.UIAlertAction) -&gt; () in NewsTaskApp.FeedsListViewController.addURL() -&gt; ()"
                   moduleName = "NewsTaskApp"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/tomislavpetrov/Developer/Endava%20Task/NewsTaskApp/NewsTaskApp/Screens/FeedsListViewController.swift"
+                  urlString = "file:///Users/tomislavpetrov/RSS-feed-app/NewsTaskApp/Screens/FeedsListViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "105"
                   endingLineNumber = "105"
-                  offsetFromSymbolStart = "139">
+                  offsetFromSymbolStart = "1152">
+               </Location>
+               <Location
+                  uuid = "250B11CF-424A-4FDD-8BDA-309345DB4904 - 8321853e8eb7485a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Bool) -&gt; () in closure #1 (__C.UIAlertAction) -&gt; () in NewsTaskApp.FeedsListViewController.addURL() -&gt; ()"
+                  moduleName = "NewsTaskApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tomislavpetrov/RSS-feed-app/NewsTaskApp/Screens/FeedsListViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "105"
+                  endingLineNumber = "105"
+                  offsetFromSymbolStart = "131">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2288481F-6866-4430-B177-F1CB8E14AEB8"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NewsTaskApp/Models/FeedsListViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "validateAndCreateFeed(url:screenType:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "518FB131-E5CD-4B6F-BA66-B1168991FDE1"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NewsTaskApp/Models/FeedsListViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "validateAndCreateFeed(url:screenType:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "99CC5CDE-2370-466B-92E1-473AC0A3869A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NewsTaskApp/Models/FeedsListViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "validateAndCreateFeed(url:screenType:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

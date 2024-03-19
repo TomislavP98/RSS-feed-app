@@ -88,7 +88,6 @@ class FeedsListViewController: UIViewController, UITableViewDelegate  {
                 } catch {
                     print("Instance fail!")
                 }
-
             }).disposed(by: disposeBag)
     }
     
@@ -97,29 +96,24 @@ class FeedsListViewController: UIViewController, UITableViewDelegate  {
     }
     
     @objc func addURL() {
-        
         let alert = UIAlertController(title: Strings.Localization.addFeed, message: Strings.Localization.enteUrl, preferredStyle: .alert)
         
         alert.addTextField()
-        
         alert.addAction(UIAlertAction(title: Strings.Localization.ok, style: .default, handler: { [weak alert, weak self] (_) in
             guard let self = self else { return }
+            
+            viewModel.validationResponse.subscribe(onNext: { [weak self] item in
+                if !item {
+                    self?.wrongEntryAlert()
+                }
+            }).disposed(by: disposeBag)
+            
             if let text = alert?.textFields?[0].text, text != Strings.Localization.empty {
-                self.viewModel.validateUrl(text)
-                self.viewModel.validationResponse.subscribe(onNext: { [weak self] item in
-                    guard let self = self else { return }
-                    if item {
-                        let newFeedObject = FeedObject(feedUrl: text, isFavorite: true)
-                        self.viewModel.createFeed(object: newFeedObject, screenType: self.screenType)
-                    } else {
-                        wrongEntryAlert()
-                    }
-                }).disposed(by: self.disposeBag)
+                viewModel.validateAndCreateFeed(url: text, screenType: screenType)
             } else {
                 wrongEntryAlert()
             }
         }))
-        
         self.present(alert, animated: true, completion: nil)
     }
     
