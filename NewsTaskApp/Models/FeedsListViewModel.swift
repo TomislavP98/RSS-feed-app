@@ -6,10 +6,11 @@ import Foundation
 class FeedsListViewModel {
     
     private var databaseManager = RealmManager()
-    let feedResponse = BehaviorSubject<[FeedObject]>(value: [])
     private let service: MoyaProvider<MoyaService>
-    private var disposeBag = DisposeBag()
+    let feedResponse = BehaviorSubject<[FeedObject]>(value: [])
     var validationResponse = PublishSubject<Bool>()
+    private var disposeBag = DisposeBag()
+
     
     init(service: MoyaProvider<MoyaService> = MoyaProvider<MoyaService>()) {
         self.service = service
@@ -37,7 +38,6 @@ class FeedsListViewModel {
             }
         }.disposed(by: disposeBag)
     }
-
     
     func getFeedsList(screenType: ScreenTypes) {
         if screenType == .allFeedsScreen{

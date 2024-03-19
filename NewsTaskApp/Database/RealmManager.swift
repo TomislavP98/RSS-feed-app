@@ -17,14 +17,23 @@ class RealmManager  {
         
         realm.beginWrite()
         realm.add(object)
-        try! realm.commitWrite()
+        
+        do {
+            try realm.commitWrite()
+        }
+        catch {
+            print("Realm instance fail!")
+        }
     }
     
     func deleteObjectFromRealm(url: String) {
         guard let realm = createRealmInstance() else { return }
         
-        realm.beginWrite()
-        realm.delete(realm.objects(FeedObject.self).where { $0.feedUrl == url }.first!)
+        if let objectToDelete = realm.objects(FeedObject.self).where ({ $0.feedUrl == url }).first {
+            realm.beginWrite()
+            realm.delete(objectToDelete)
+        }
+        
         do {
             try realm.commitWrite()
         }
@@ -36,7 +45,6 @@ class RealmManager  {
     func fetchAllFeeds() -> [FeedObject] {
         var objectArray: [FeedObject] = []
         guard let realm = createRealmInstance() else { return objectArray }
-
         
         objectArray = Array(realm.objects(FeedObject.self))
         objectArray.sort(by: { $0.feedName < $1.feedName })
@@ -53,8 +61,7 @@ class RealmManager  {
     }
     
     func toggleFavorite(id: String) {
-        guard let realm = createRealmInstance() else { return }
-        let targetFeedObject = realm.objects(FeedObject.self).where { $0.id == id }.first!
+        guard let realm = createRealmInstance(), let targetFeedObject = realm.objects(FeedObject.self).where ({ $0.id == id }).first else { return }
         
         do {
             try realm.write {

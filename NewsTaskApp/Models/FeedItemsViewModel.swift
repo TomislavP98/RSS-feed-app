@@ -22,12 +22,10 @@ class FeedItemsViewModel {
                     let feedResponse = try filterResponse.map(FeedResponse.self,using: JSONDecoder())
                     self?.feedResponse.onNext(feedResponse.result.entries)
                 } catch let error {
-                    self?.feedResponse.onNext([])
-                    print(error.localizedDescription)
+                    self?.feedResponse.onError(error)
                 }
             case .failure(let error):
-                self?.feedResponse.onNext([])
-                print(error.localizedDescription)
+                self?.feedResponse.onError(error)
             }
         }.disposed(by: disposeBag)
     }

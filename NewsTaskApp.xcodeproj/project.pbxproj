@@ -140,11 +140,11 @@
 		F8146F082A0FCD7F0007309D /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				F88F36872BA77A9D00846988 /* ValidateUrlResponse.swift */,
 				F8146F092A0FCE540007309D /* FeedResponse.swift */,
 				F88F364F2B9F81CD00846988 /* FeedObject.swift */,
 				F88F36602BA0AB0E00846988 /* FeedItemsViewModel.swift */,
 				F88F366E2BA1E29C00846988 /* FeedsListViewModel.swift */,
-				F88F36872BA77A9D00846988 /* ValidateUrlResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -172,8 +172,8 @@
 				F88F366C2BA1BBC400846988 /* ScreenTypes.swift */,
 				F88F36722BA3683400846988 /* Dimensions.swift */,
 				F88F36742BA36B8A00846988 /* Date.swift */,
-				F88F36762BA36D1F00846988 /* Strings.swift */,
 				F88F367A2BA374DD00846988 /* Style.swift */,
+				F88F36762BA36D1F00846988 /* Strings.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";

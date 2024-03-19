@@ -6,7 +6,7 @@ import SnapKit
 class FeedCell: UITableViewCell {
     
     static let identifier = Strings.Indentifiers.feedCell
-    var bag: DisposeBag = DisposeBag()
+    var disposeBag: DisposeBag = DisposeBag()
     
     private lazy var contentStack: UIStackView = {
         let stackView = UIStackView()
@@ -22,27 +22,29 @@ class FeedCell: UITableViewCell {
         return stackView
     }()
     
-    private lazy var titleLabel: UILabel = {
+    private lazy var nameLabel: UILabel = {
         let label = UILabel()
         label.font = Style.Text.title
         return label
     }()
     
-    private lazy var descriptionLabel: UILabel = {
+    private lazy var urlLabel: UILabel = {
         let label = UILabel()
-        label.numberOfLines = 0
         label.font = Style.Text.description
         return label
     }()
     
     lazy var favorizeButton: UIButton = {
         let button = UIButton()
-        button.layer.zPosition = 3
         return button
     }()
     
-    lazy var favoriteImageView: UIImageView = .init(image: UIImage(systemName: "heart"))
-    
+    private lazy var favoriteImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(systemName: "heart")
+        return imageView
+    }()
+            
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.setupView()
@@ -54,7 +56,7 @@ class FeedCell: UITableViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        bag = DisposeBag()
+        disposeBag = DisposeBag()
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
@@ -63,18 +65,18 @@ class FeedCell: UITableViewCell {
     
     private func setupView() {
         contentView.addSubview(contentStack)
+        
         contentStack.addArrangedSubview(favorizeButton)
         contentStack.addArrangedSubview(labelStack)
         
-        labelStack.addArrangedSubview(titleLabel)
-        labelStack.addArrangedSubview(descriptionLabel)
+        labelStack.addArrangedSubview(nameLabel)
+        labelStack.addArrangedSubview(urlLabel)
         
         favorizeButton.addSubview(favoriteImageView)
         
         contentStack.snp.makeConstraints { make in
             make.edges.equalToSuperview().inset(Dimensions.Container.feedInset)
         }
-        
         
         favorizeButton.snp.makeConstraints { make in
             make.size.equalTo(Dimensions.Icons.normal)
@@ -83,13 +85,12 @@ class FeedCell: UITableViewCell {
         
         favoriteImageView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
-            
         }
     }
     
     func configureView(with data: FeedObject) {
-        titleLabel.text = data.feedName
-        descriptionLabel.text = data.feedUrl
+        nameLabel.text = data.feedName
+        urlLabel.text = data.feedUrl
         favoriteImageView.image = data.isFavorite ? UIImage(systemName: "heart.fill") : UIImage(systemName: "heart")
     }
     

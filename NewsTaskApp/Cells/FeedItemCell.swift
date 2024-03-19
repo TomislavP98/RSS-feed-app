@@ -84,26 +84,22 @@ final class FeedItemCell: UITableViewCell {
     }
     
     func configureView(with data: FeedItem) {
-        titleLabel.text = data.title
+        titleLabel.text = data.title ?? Strings.Localization.noTitle
         descriptionLabel.text = data.description ?? Strings.Localization.noDescription
         dateLabel.text = formatDate(date: data.time ?? "")
         
         if let imageURL = URL(string: data.image?.url ?? "") {
             DispatchQueue.global().async {
-                if let data = try? Data(contentsOf: imageURL) {
-                    if let image = UIImage(data: data) {
-                        DispatchQueue.main.async {
-                            self.itemImageView.image = image
-                        }
+                if let data = try? Data(contentsOf: imageURL), let image = UIImage(data: data) {
+                    DispatchQueue.main.async {
+                        self.itemImageView.image = image
                     }
                 }
             }
         }
-        
     }
     
     private func formatDate(date: String) -> String {
-        
         let dateFormatter = DateFormatter()
         let displayDateFormatter = DateFormatter()
         

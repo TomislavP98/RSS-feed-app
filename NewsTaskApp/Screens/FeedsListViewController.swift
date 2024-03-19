@@ -9,20 +9,11 @@ class FeedsListViewController: UIViewController, UITableViewDelegate  {
     private var viewModel = FeedsListViewModel()
     private var disposeBag = DisposeBag()
     
-    var screenType: ScreenTypes
+    private var screenType: ScreenTypes
     
     private var tableView: UITableView = {
         let tableView = UITableView(frame: .zero)
         return tableView
-    }()
-    
-    
-    private lazy var buttonStack: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .horizontal
-        stackView.alignment = .top
-        stackView.spacing = Dimensions.Container.padding4
-        return stackView
     }()
     
     init(screenType: ScreenTypes) {
@@ -47,6 +38,7 @@ class FeedsListViewController: UIViewController, UITableViewDelegate  {
     
     private func setupView() {
         self.view.addSubview(tableView)
+        
         tableView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
@@ -68,7 +60,7 @@ class FeedsListViewController: UIViewController, UITableViewDelegate  {
                 .subscribe({ [weak self] _ in
                     guard let self = self else { return }
                     self.viewModel.toggleFeedFavorite(id: items.id, screenType: self.screenType)
-                }).disposed(by: cell.bag)
+                }).disposed(by: cell.disposeBag)
         }.disposed(by: disposeBag)
 
         tableView.rx
@@ -80,7 +72,7 @@ class FeedsListViewController: UIViewController, UITableViewDelegate  {
         
         tableView.rx
             .itemDeleted
-            .subscribe(onNext: {  [weak self] indexPath in
+            .subscribe(onNext: { [weak self] indexPath in
                 guard let self = self else { return }
                 do {
                     let currentTableViewData = try self.viewModel.feedResponse.value()
@@ -91,14 +83,13 @@ class FeedsListViewController: UIViewController, UITableViewDelegate  {
             }).disposed(by: disposeBag)
     }
     
-    func setDelegateForTableView() {
-        tableView.rx.setDelegate(self).disposed(by: disposeBag)
-    }
-    
     @objc func addURL() {
         let alert = UIAlertController(title: Strings.Localization.addFeed, message: Strings.Localization.enteUrl, preferredStyle: .alert)
-        
         alert.addTextField()
+        
+        let cancelAction = UIAlertAction(title: Strings.Localization.cancel, style: .cancel)
+        alert.addAction(cancelAction)
+        
         alert.addAction(UIAlertAction(title: Strings.Localization.ok, style: .default, handler: { [weak alert, weak self] (_) in
             guard let self = self else { return }
             
@@ -120,8 +111,11 @@ class FeedsListViewController: UIViewController, UITableViewDelegate  {
     @objc func addApiKey() {
         
         let alert = UIAlertController(title: Strings.Localization.addApi, message: Strings.Localization.enterApi, preferredStyle: .alert)
-        
         alert.addTextField()
+        
+        let cancelAction = UIAlertAction(title: Strings.Localization.cancel, style: .cancel)
+        alert.addAction(cancelAction)
+        
         alert.addAction(UIAlertAction(title: Strings.Localization.ok, style: .default, handler: { [weak alert, weak self]  (_) in
             if let text = alert?.textFields?[0].text, text != Strings.Localization.empty {
                 let keychain = KeychainSwift()
@@ -130,7 +124,6 @@ class FeedsListViewController: UIViewController, UITableViewDelegate  {
                 self?.wrongEntryAlert()
             }
         }))
-        
         self.present(alert, animated: true, completion: nil)
     }
     

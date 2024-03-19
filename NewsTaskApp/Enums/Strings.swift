@@ -1,5 +1,4 @@
 enum Strings {
-    
     enum Localization {
         static let empty: String = ""
         static let addUrl: String = "Add URL"
@@ -13,9 +12,11 @@ enum Strings {
         static let allFeeds: String = "All feeds"
         static let likedFeeds: String = "Liked Feeds"
         static let ok: String = "Ok"         // This one is almost pointless
-        static let loaderMessage: String = "If it keeps spinning, go back and chek on API or URL"
+        static let loaderMessage: String = "If it keeps spinning, go back and check on API or URL"
         static let invalidUrl: String = "Invalid entry"
         static let noDescription: String = "Ne description found"
+        static let cancel: String = "Cancel"
+        static let noTitle: String = "No title"
     }
     
     enum Indentifiers {
@@ -26,6 +27,4 @@ enum Strings {
     enum Key {
         static let apiKey: String = "apiKeySecret"
     }
-
-    
 }

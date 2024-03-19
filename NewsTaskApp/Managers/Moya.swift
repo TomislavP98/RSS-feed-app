@@ -8,7 +8,6 @@ enum MoyaService : TargetType {
    
     var baseURL: URL { return URL(string: "https://api.rssapi.net")! }
     
-    // only one case, but open for expansion
     case getUser(url: String)
     case verifyUrl(url: String)
     

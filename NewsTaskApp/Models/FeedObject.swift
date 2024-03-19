@@ -21,5 +21,6 @@ public func getNameFromUrl(_ url: String) -> String {
     if let headerRange = urlString.range(of: "://") {
         urlString.removeSubrange(urlString.startIndex..<headerRange.upperBound)
     }
-    return urlString.components(separatedBy: "/").first!
+    guard let formattedString = urlString.components(separatedBy: "/").first else { return urlString }
+    return formattedString
 }
