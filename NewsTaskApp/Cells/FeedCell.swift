@@ -7,7 +7,7 @@ class FeedCell: UITableViewCell {
     
     static let identifier = Strings.Indentifiers.feedCell
     var bag: DisposeBag = DisposeBag()
-
+    
     private lazy var contentStack: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .horizontal
@@ -40,13 +40,13 @@ class FeedCell: UITableViewCell {
         button.layer.zPosition = 3
         return button
     }()
-         
+    
     lazy var favoriteImageView: UIImageView = .init(image: UIImage(systemName: "heart"))
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-            super.init(style: style, reuseIdentifier: reuseIdentifier)
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.setupView()
-        }
+    }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -68,7 +68,7 @@ class FeedCell: UITableViewCell {
         
         labelStack.addArrangedSubview(titleLabel)
         labelStack.addArrangedSubview(descriptionLabel)
-    
+        
         favorizeButton.addSubview(favoriteImageView)
         
         contentStack.snp.makeConstraints { make in

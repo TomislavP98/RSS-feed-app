@@ -50,8 +50,11 @@ class FeedItemsListViewController: UIViewController, UITableViewDelegate  {
     }
     
     private func bindTableView() {
+        viewModel.feedResponse.subscribe(onNext: { [weak self] _ in
+            self?.stopLoading()
+        }).disposed(by: disposeBag)
+        
         viewModel.feedResponse.bind(to: tableView.rx.items(cellIdentifier: Strings.Indentifiers.feedItemCell, cellType: FeedItemCell.self)) { row, items, cell in
-            self.stopLoading()
             cell.configureView(with: items)
         }.disposed(by: disposeBag)
         
